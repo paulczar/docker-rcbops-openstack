@@ -127,8 +127,7 @@ roles:
 
 
 environments:
-- example:
-- vagrant-basic:
+- docker:
 
 data bags:
 # - pxe_dust:
@@ -136,6 +135,6 @@ data bags:
 #     - "*"
 
 nodes:
-#- allinone:
-#     run_list: role[allinone]
-#     options: -E vagrant-basic
+#- docker:
+#     run_list: role[allinone],recipe[docker]
+#     options: -E docker

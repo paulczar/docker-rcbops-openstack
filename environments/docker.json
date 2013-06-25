@@ -1,14 +1,11 @@
 {
-  "name": "vagrant-basic",
-  "description": "Environment for Rackspace Private Cloud (Grizzly)",
+  "name": "docker",
+  "description": "Environment for Docker on Rackspace Private Cloud (Grizzly) in Vagrant",
   "cookbook_versions": {
   },
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
-    "horizon": {
-      "theme": "Rackspace"
-    }
   },
   "override_attributes": {
     "hardware": {
@@ -17,7 +14,7 @@
     "keystone": {
       "users": {
         "admin": {
-          "password": "vagrant",
+          "password": "docker!",
           "roles": {
             "admin": [
               "admin"
@@ -26,22 +23,6 @@
         }
       }
     },
-    "vips": {
-      "mysql-db": "33.33.33.63",
-      "rabbitmq-queue": "33.33.33.62",
-      "horizon-dash_ssl": "33.33.33.61",
-      "cinder-api": "33.33.33.61",
-      "nova-api": "33.33.33.61",
-      "nova-ec2-public": "33.33.33.61",
-      "nova-novnc-proxy": "33.33.33.61",
-      "horizon-dash": "33.33.33.61",
-      "keystone-admin-api": "33.33.33.61",
-      "keystone-internal-api": "33.33.33.61",
-      "keystone-service-api": "33.33.33.61",
-      "nova-xvpvnc-proxy": "33.33.33.61",
-      "glance-registry": "33.33.33.61",
-      "glance-api": "33.33.33.61"
-    },   
     "enable_monit": false,
     "monitoring": {
       "metric_provider": "collectd",
@@ -54,7 +35,7 @@
       "image": {
         "cirros": "https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img"
       },
-      "image_upload": true
+      "image_upload": false
     },
     "nova": {
       "config": {

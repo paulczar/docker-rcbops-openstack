@@ -1,0 +1,13 @@
+{
+  "name": "docker",
+  "chef_environment": "docker",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "run_list": [
+    "recipe[docker]",
+    "role[allinone]"
+  ]
+}
